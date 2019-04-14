@@ -13,7 +13,6 @@
   background: linear-gradient(to bottom, #333333 0%, #141414 100%);
   border-bottom: 2px solid #0fa1e0;
   width: auto;
-  font-family: "Droid Sans",Arial,Sans;
 }
 #TOC:after,
 #TOC ul:after {
@@ -126,15 +125,3 @@
 #TOC ul {
   font-size: 1.2rem;
 }
-
-<style>
-/* Rearrange console label */
-.datacamp-exercise ol li, .datacamp-exercise ul li {
-  margin-bottom: 0em !important;
-}
-
-/* Remove bullet marker */
-.datacamp-exercise ol li::before, .datacamp-exercise ul li::before {
-  content: '' !important;
-}
-</style>
