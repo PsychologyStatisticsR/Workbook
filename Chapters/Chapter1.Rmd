@@ -1,6 +1,6 @@
 #  Regression and the Normal Distribution
 
-**Chapter description**
+**IS THIS WORKING**
 
 Regression analysis is a statistical method that is widely used in many fields of study, with actuarial science being no exception. This chapter introduces the role of the normal distribution in regression and the use of logarithmic transformations in specifying regression relationships.
 
