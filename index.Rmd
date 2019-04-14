@@ -1,25 +1,15 @@
 --- 
-<<<<<<< Updated upstream
-title: "Online Tutorial on `Undergraduate Psychology Statistics using R`"
-author: "Kate M. Sanders (Hendrix College)"
-=======
 title: "A Minimal Book Example"
 author: "Yihui Xie"
 date: "`r Sys.Date()`"
->>>>>>> Stashed changes
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-<<<<<<< Updated upstream
-github-repo: https://github.com/PsychologyStatisticsR/Workbook
-description: "An online workbook for using R alongside an undergraduate psychology statistics course."
-=======
 github-repo: rstudio/bookdown-demo
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
->>>>>>> Stashed changes
 ---
 
 # Prerequisites
@@ -36,99 +26,7 @@ install.packages("bookdown")
 
 Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
 
-<<<<<<< Updated upstream
-# Preface {-}
-
-<p style="text-align:right;">
-*Date: `r format(Sys.Date(), "%d %B %Y")`*</p>
-
-
-### About Regression Modeling {-}
-
-Statistical techniques can be used to address new situations. This is important in a rapidly evolving risk management world. Analysts with a strong analytical background understand that a large data set can represent a treasure trove of information to be mined and can yield a strong competitive advantage. This book and online tutorial provides budding analysts with a foundation in multiple reression. Viewers will learn about these statistical techniques using data on the demand for insurance, healthcare expenditures, and other applications. Although no specific knowledge of actuarial or risk management is presumed, the approach introduces applications in which statistical techniques can be used to analyze real data of interest.
-
-### Resources {-}
-
-
-
-### Tutorial Description {-}
-
-- This online tutorial is designed to show you how 
-
-**General Layout.**
-
-
-**Role of Exercises.** 
-
-
-
-
-<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'OverWelcomeA')">A. Galton's 1885 Regression Data</button>
-  <button class="tablinks" onclick="openTab(event, 'OverWelcomeB')">B. Supporting R Code</button>
-</div>
-
-<div id="OverWelcomeA" class="tabcontent">
-  <span onclick="this.parentElement.style.display='none'" class="topright">Hide</span>
-  <h3>A. Galton's 1885 Regression Data</h3>
-  <p>
-  
-$$
-\small{\begin{array}{l|ccccccccccc|c}
-\hline
-\text{Height of }&  &  &  &  &  &  &  &  &  &  &  &  \\
-\text{adult child }&  &  &  &  &  &  &  &  &  &  &  &  \\
-\text{in inches }& <64.0 & 64.5 & 65.5 & 66.5 & 67.5 & 68.5 &
-69.5 & 70.5 & 71.5 & 72.5 & >73.0 & \text{Totals} \\
-\hline
->73.7 & - & - & - & - & - & - & 5 & 3 & 2 & 4 & - & 14 \\
-73.2 & - & - & - & - & - & 3 & 4 & 3 & 2 & 2 & 3 & 17 \\
-72.2 & - & - & 1 & - & 4 & 4 & 11 & 4 & 9 & 7 & 1 & 41 \\
-71.2 & - & - & 2 & - & 11 & 18 & 20 & 7 & 4 & 2 & - & 64 \\
-70.2 & - & - & 5 & 4 & 19 & 21 & 25 & 14 & 10 & 1 & - & 99 \\
-69.2 & 1 & 2 & 7 & 13 & 38 & 48 & 33 & 18 & 5 & 2 & - & 167 \\
-68.2 & 1 & - & 7 & 14 & 28 & 34 & 20 & 12 & 3 & 1 & - & 120 \\
-67.2 & 2 & 5 & 11 & 17 & 38 & 31 & 27 & 3 & 4 & - & - & 138 \\
-66.2 & 2 & 5 & 11 & 17 & 36 & 25 & 17 & 1 & 3 & - & - & 117 \\
-65.2 & 1 & 1 & 7 & 2 & 15 & 16 & 4 & 1 & 1 & - & - & 48 \\
-64.2 & 4 & 4 & 5 & 5 & 14 & 11 & 16 & - & - & - & - & 59 \\
-63.2 & 2 & 4 & 9 & 3 & 5 & 7 & 1 & 1 & - & - & - & 32 \\
-62.2 & - & 1 & - & 3 & 3 & - & - & - & - & - & - & 7 \\
-<61.2 & 1 & 1 & 1 & - & - & 1 & - & 1 & - & - & - & 5 \\ \hline
-\text{Totals }& 14 & 23 & 66 & 78 & 211 & 219 & 183 & 68 & 43 & 19 & 4 & 928 \\
-\hline
-\end{array}}
-$$
-</p>
-</div>
-
-<div id="OverWelcomeB" class="tabcontent">
-  <span onclick="this.parentElement.style.display='none'" class="topright">Hide</span>
-  <h3>B. Supporting R Code</h3>
-  <p>
-  
-```{r comment = "", eval = FALSE, warning = FALSE}
-# Reformat Data Set
-#heights <- read.csv("CSVData\\GaltonFamily.csv",header = TRUE)
-heights <- read.csv("https://assets.datacamp.com/production/repositories/2610/datasets/c85ede6c205d22049e766bd08956b225c576255b/galton_height.csv", header = TRUE)
-str(heights)
-head(heights)
-heights$child_ht <- heights$CHILDC
-heights$parent_ht <- heights$PARENTC
-heights2 <- heights[c("child_ht","parent_ht")]
-```
-
-```{r comment = "", eval = EVALUATE_CHAP1}
-#heights <- read.csv("CSVData\\galton_height.csv",header = TRUE)
-heights <- read.csv("https://assets.datacamp.com/production/repositories/2610/datasets/c85ede6c205d22049e766bd08956b225c576255b/galton_height.csv", header = TRUE)
-plot(jitter(heights$parent_ht),jitter(heights$child_ht), ylim = c(60,80), xlim = c(60,80),
-     ylab = "height of child", xlab = "height of parents")
-abline(lm(heights$child_ht~heights$parent_ht))
-abline(0,1,col = "red", lty=2)
-summary(lm(heights$child_ht~heights$parent_ht))
-=======
 To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
->>>>>>> Stashed changes
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
